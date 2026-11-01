@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jehee Nam</title>
+<meta name="description" content="Jehee Nam, Tenafly High School Class of 2027: neuroscience research, student journalism, and The Wait.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,700;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f1e8; --paper-2:#efe7d9; --ink:#1f1d1a; --ink-2:#4a4642; --rule:#cfc4b3;
+  --brick:#8c2f1f; --brick-2:#a84a33; --slate:#39434d;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Newsreader",Georgia,serif;font-size:18px;line-height:1.55}
+a{color:var(--brick);text-decoration:none;border-bottom:1px solid rgba(140,47,31,.35)}
+a:hover{border-bottom-color:var(--brick)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+
+/* masthead */
+.masthead{border-bottom:3px double var(--ink);padding:26px 0 14px}
+.kicker{font-family:"Inter",system-ui,sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.name{font-size:clamp(44px,8vw,86px);font-weight:700;line-height:.95;letter-spacing:-.02em;margin:10px 0 6px}
+.name span{color:var(--brick)}
+.deck{font-size:clamp(19px,2.4vw,24px);font-style:italic;color:var(--ink-2);max-width:760px;margin:0}
+nav{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--rule);z-index:5}
+nav .wrap{display:flex;gap:4px 22px;flex-wrap:wrap;padding:10px 20px;font-family:"Inter",system-ui,sans-serif;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+nav a{border:0;color:var(--ink-2)} nav a:hover{color:var(--brick)}
+
+/* lead story */
+.lead{display:grid;grid-template-columns:1.25fr .75fr;gap:34px;padding:34px 0 10px;border-bottom:1px solid var(--rule)}
+.lead p{font-size:21px;margin:0 0 14px}
+.lead p:first-child::first-letter{font-size:3.1em;float:left;line-height:.85;padding:6px 8px 0 0;color:var(--brick);font-weight:700}
+.facts{border-left:3px solid var(--brick);padding-left:18px;font-family:"Inter",system-ui,sans-serif;font-size:14px;color:var(--ink-2)}
+.facts dt{font-weight:600;color:var(--ink);margin-top:10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.facts dd{margin:2px 0 0}
+
+/* sections */
+section{padding:34px 0;border-bottom:1px solid var(--rule)}
+h2{font-size:13px;font-family:"Inter",system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--brick);margin:0 0 6px}
+h2 + .head{font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.1;margin:0 0 18px;letter-spacing:-.01em}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:30px 40px}
+.story h3{font-size:22px;margin:0 0 4px;line-height:1.2}
+.story .where{font-family:"Inter",system-ui,sans-serif;font-size:13px;color:var(--ink-2);margin:0 0 8px}
+.story p{margin:0 0 10px}
+.pull{font-size:24px;font-style:italic;line-height:1.35;border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:14px 0;margin:6px 0 18px;color:var(--ink)}
+.rule{height:1px;background:var(--rule);margin:22px 0}
+
+.abs{margin:8px 0 14px;border:1px solid var(--rule);border-radius:4px;background:var(--paper-2);padding:6px 14px}
+.abs summary{cursor:pointer;font-family:"Inter",system-ui,sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brick);padding:6px 0}
+.abs p{font-size:16px;margin:8px 0}
+.abs .kw{font-family:"Inter",system-ui,sans-serif;font-size:13px;color:var(--ink-2)}
+/* the wait */
+.wait{background:var(--slate);color:#efe9df;border:0}
+.wait h2{color:#e9b8a8} .wait .head{color:#fff}
+.wait a{color:#f3c9bb;border-bottom-color:rgba(243,201,187,.4)}
+.wait .where{color:#cfc8bc}
+.cardimg{display:grid;gap:10px;margin:18px 0 6px}
+.cardimg img{width:100%;height:auto;border:1px solid rgba(255,255,255,.25);background:#fff;border-radius:4px}
+.caption{font-family:"Inter",system-ui,sans-serif;font-size:13px;color:#cfc8bc;margin:0}
+.btn{display:inline-block;font-family:"Inter",system-ui,sans-serif;font-size:14px;font-weight:600;letter-spacing:.04em;padding:10px 16px;border:1.5px solid #f3c9bb;border-radius:3px;color:#fff;margin-top:10px}
+.btn:hover{background:#f3c9bb;color:var(--slate)}
+
+.flyers{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}
+.flyers img{width:100%;height:auto;border:1px solid rgba(255,255,255,.25);background:#fff;border-radius:4px}
+@media (max-width:760px){.flyers{grid-template-columns:1fr}}
+/* brief lists */
+.briefs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px 34px}
+.brief h3{font-size:19px;margin:0 0 3px}
+.brief .where{font-family:"Inter",system-ui,sans-serif;font-size:12.5px;color:var(--ink-2);margin:0 0 6px}
+.brief p{margin:0;font-size:17px}
+
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+.photos img{width:100%;height:auto;border:1px solid var(--rule);border-radius:4px;display:block}
+.photos figure{margin:0}
+.photos figcaption{font-family:"Inter",system-ui,sans-serif;font-size:13px;color:var(--ink-2);margin-top:6px}
+@media (max-width:760px){.photos{grid-template-columns:1fr}}
+/* honors */
+.honors{columns:2;column-gap:40px;font-size:17px;margin:0;padding:0;list-style:none}
+.honors li{break-inside:avoid;padding:6px 0;border-bottom:1px dotted var(--rule)}
+.honors .lvl{font-family:"Inter",system-ui,sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brick);display:block}
+.cert{margin-top:18px;max-width:420px}
+.cert img{width:100%;height:auto;border:1px solid var(--rule)}
+
+footer{padding:28px 0 46px;font-family:"Inter",system-ui,sans-serif;font-size:14px;color:var(--ink-2)}
+footer .big{font-family:"Newsreader",Georgia,serif;font-size:26px;color:var(--ink);margin:0 0 6px}
+@media (max-width:760px){
+  .lead{grid-template-columns:1fr;gap:18px}
+  .cols{grid-template-columns:1fr}
+  .honors{columns:1}
+  .lead p{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="kicker"><span>Tenafly High School, Class of 2027</span><span>Neuroscience and journalism</span></div>
+    <h1 class="name">Jehee <span>Nam</span></h1>
+    <p class="deck">Four years mapping the chemistry of fruit flies, four years running a school newspaper, and one documentary about what happens when medical information never reaches the patient.</p>
+  </div>
+</header>
+
+<nav><div class="wrap">
+  <a href="#research">Research</a><a href="#wait">The Wait</a><a href="#echo">Journalism</a><a href="#community">Community</a><a href="#honors">Honors</a><a href="#contact">Contact</a>
+</div></nav>
+
+<main class="wrap">
+
+<div class="lead">
+  <div>
+    <p>I work on two problems that turn out to be the same one. In a neuroscience lab, I map where molecules sit inside a fruit fly and watch how that map changes with age. In a newsroom, I take what someone knows and get it to the people who need it. The second problem showed up in my own family first, at my mother’s doctor’s appointments, where I translated and still watched the information fall short of her.</p>
+    <p>I plan to study neuroscience in college and to keep writing. The documentary below is where the two jobs met.</p>
+  </div>
+  <dl class="facts">
+    <dt>Intended major</dt><dd>Neuroscience</dd>
+    <dt>Research</dt><dd>Ye He Lab, CUNY Neuroscience Initiative, since 9th grade</dd>
+    <dt>Summer 2026</dt><dd>Summer Science Program, Bacterial Genomics</dd>
+    <dt>Newspaper</dt><dd>Co-Editor-in-Chief, <em>The Echo</em></dd>
+    <dt>Testing</dt><dd>SAT 1570; AP Scholar with Distinction</dd>
+    <dt>This fall</dt><dd>Differential Equations at Bergen Community College</dd>
+  </dl>
+</div>
+
+<section id="research">
+  <h2>Research</h2>
+  <p class="head">A map of a fly, one molecule at a time</p>
+  <div class="cols">
+    <div class="story">
+      <h3>Ye He Lab, CUNY Neuroscience Initiative</h3>
+      <p class="where">Student Researcher and Data Analyst, 9th grade to present</p>
+      <p>I do spatial metabolomics: I section whole fruit flies, image them by MALDI mass spectrometry, and analyze where each metabolite appears across the body using SCiLS Lab and other mass-spectrometry software. From that work I built an independent whole-body metabolomics atlas of the fly, and I am now extending it to aging, comparing the metabolic maps of adult flies at different ages to see where the chemistry changes first.</p>
+      <p>I also annotate images and data for two larger projects in the lab, on adult fly aging and on larval spinal cord injury, which is how I learned the full workflow from sample preparation to spectral processing and interpretation.</p>
+    </div>
+    <div class="story">
+      <h3>Summer Science Program, Bacterial Genomics</h3>
+      <p class="where">Summer 2026, five weeks, three-person research team</p>
+      <p>Our team asked whether the density of a bacterial culture at the moment it meets an antibiotic changes how much antibiotic it takes for resistance to evolve. We grew <em>Vibrio natriegens</em> in a turbidostat over seven days, raising kanamycin concentrations while holding each culture to a set density, then sequenced the evolved populations. Cultures kept at higher densities needed more kanamycin before resistance appeared, and sequencing pointed to the <em>fusA</em> gene.</p>
+      <details class="abs">
+<summary>Read the abstract</summary>
+<p><strong>Population density and the evolution of kanamycin resistance in <em>Vibrio natriegens</em></strong></p>
+<p>Antimicrobial resistance (AMR) has emerged as one of the most pressing global public health threats, driven by the widespread misuse of antimicrobial drugs that imposes strong selective pressures on bacterial populations. Antibiotic resistance, a major subclass of AMR, arises when bacteria acquire genetic changes that enable them to survive antibiotic treatment, making infections increasingly difficult to treat. Although the aminoglycoside antibiotic kanamycin is extensively studied for its mechanism of action and applications in molecular genetics, the influence of bacterial population density on the evolution of kanamycin resistance remains poorly understood. This study investigated whether the optical density (OD) threshold of <em>Vibrio natriegens</em> cultures at the time of antibiotic exposure influences the concentration of kanamycin required for resistance to evolve. It was hypothesized that cultures maintained at higher OD thresholds before antibiotic exposure would require higher concentrations of kanamycin before resistance emerged. To test this hypothesis, <em>V. natriegens</em> cultures were grown in a turbidostat over a seven-day period, where culture density was regulated by dilution at predetermined OD thresholds while kanamycin concentrations were progressively increased. Bacterial growth and adaptation were continuously monitored, and whole-genome sequencing was performed on evolved populations to identify mutations associated with resistance. Cultures exposed to kanamycin at higher OD thresholds evolved resistance only after reaching higher kanamycin concentrations. Genomic analysis identified mutations in the <em>fusA</em> gene among resistant populations, supporting its role in kanamycin resistance, while no mutations were detected in <em>rpsB</em> or <em>rpsE</em>. These findings demonstrate that bacterial population density at the onset of antibiotic exposure influences the evolutionary trajectory of kanamycin resistance in <em>V. natriegens</em>, providing new insight into how factors shape antimicrobial resistance evolution and informing future strategies to mitigate the emergence of antibiotic-resistant bacteria.</p>
+<p class="kw">Keywords: antibiotic resistance, kanamycin, <em>Vibrio natriegens</em>, <em>fusA</em></p>
+</details>
+<div class="pull">The question I keep coming back to is the handoff: how a change in a fly’s chemistry becomes a change in how it moves, remembers, or sleeps.</div>
+    </div>
+  </div>
+</section>
+
+<section id="wait" class="wait">
+  <div class="wrap" style="padding:0">
+  <h2>The Wait</h2>
+  <p class="head">A documentary, and a card patients can hand to the front desk</p>
+  <div class="cols">
+    <div class="story">
+      <p class="where">Producer, Young Global Leaders of the East (YGLE), 2025 to present</p>
+      <p><em>The Wait</em> is a student documentary about Korean immigrants who avoid going to the hospital because of the language barrier, and who let illness grow while they wait. I produce the film, which means managing its schedule and interviews, and I coordinate the bilingual card that goes with it.</p>
+      <p>The card is a Korean and English patient card for hospital and dental visits. A patient can point to why she came, where it hurts, which medications she takes, and that she needs an interpreter, which federal law entitles her to at no cost. A registered nurse reviewed the medical text and a dentist reviewed the dental text in September 2026. Our team printed 300 and donated all of them to Korean American community organizations in New Jersey and New York; 500 more are planned for New York and Connecticut.</p>
+      <p>On October 17, 2026, I ran our card booth at the Tenafly Korean Community Center with two teammates. We spoke with Tenafly’s mayor, and interpreter services, senior support groups, and a law firm asked us for cards.</p>
+      <a class="btn" href="https://youtu.be/8lQXujgL2L8">Watch The Wait on YouTube</a>
+    </div>
+    <div>
+      <div class="cardimg">
+        <img src="assets/card-a.png" alt="The Wait patient card, first panels: interpreter request, hospital visit reason, symptoms">
+        <img src="assets/card-b.png" alt="The Wait patient card, later panels: dental visit, communication phrases, instructions, note to staff">
+      </div>
+      <p class="caption">The six-panel card. Design by Cara Ko; medical facts checked by Tyler Jung; filming by Jacob Choi. Reviewed by Sarah Gun, BSN, RN, and Junhyck Kim, DDS.</p>
+    </div>
+  </div>
+
+  <p class="caption" style="margin-top:26px;font-size:15px">Our team also made two large-print Korean and English flyers to hand out with the card. Each one lists where to go, who qualifies, what it costs, and the number to call.</p>
+  <div class="flyers">
+    <div><img src="assets/flyer-1.png" alt="The Wait flyer: free and low-cost health screening and support services in Bergen County, in Korean and English"><p class="caption">Flyer 1: free and low-cost health screenings and clinics in Bergen County, with who qualifies, cost, phone, and whether Korean help is available. Verified September 2026.</p></div>
+    <div><img src="assets/flyer-2.png" alt="The Wait flyer: low-cost dental care services in Bergen County, in Korean and English"><p class="caption">Flyer 2: low-cost dental care, from community clinics to the Rutgers dental school student clinic.</p></div>
+  </div>
+  </div>
+</section>
+
+<section id="echo">
+  <h2>Journalism</h2>
+  <p class="head">Four years of hard news, then the masthead</p>
+  <div class="cols">
+    <div class="story">
+      <h3><em>The Echo</em>, Tenafly High School</h3>
+      <p class="where">Co-Editor-in-Chief, 12th grade; Copy Editor, 11th grade; reporter since 9th</p>
+      <p>I have written and researched hard-news stories nearly every week since freshman year, mostly on social issues, with opinion and school-life pieces in between. As Copy Editor I edited five or more articles a week and compiled the weekly <em>Stories of the Week</em> email that goes to middle and high school students and staff.</p>
+      <p>When New Jersey’s school cellphone ban made it hard for reporters to conduct interviews and take photos, I introduced press passes so they could keep working. As Co-Editor-in-Chief I run meetings, set agendas, and oversee publication. Since 10th grade I have also co-hosted a course-selection podcast interviewing teachers and students, and I was selected through the paper to mentor elementary school newspaper students every week, helping them brainstorm, edit, and get their work published.</p>
+    </div>
+    <div class="story">
+      <h3>Writing outside the paper</h3>
+      <p class="where">Fiction, essays, games</p>
+      <p>Scholastic Art and Writing Awards Silver Key for a critical essay, “And Justice for the Privileged.” First Prize in the micro-RPG category of Ringling College’s Storytellers of Tomorrow contest, out of more than 500 entries. Finalist in West Side Campaign Against Hunger’s Writing Against Hunger contest. Honorable Mention at the Peace Islands Institute Art and Essay Contest.</p>
+      <h3 style="margin-top:18px">Science Olympiad</h3>
+      <p class="where">Co-President, 12th grade; four years in biology events</p>
+      <p>Anatomy and Physiology, Disease Detectives, Microbe Mission, and Designer Genes at regional and state tournaments. I help coordinate registration and scheduling, track the team’s preparation, and mentor students moving up from middle school Science Olympiad. Fourth place at the 2026 Newark Regional Brain Bee.</p>
+    </div>
+  </div>
+</section>
+
+<section id="community">
+  <h2>Community</h2>
+  <p class="head">Teaching, tutoring, and a viola</p>
+  <div class="briefs">
+    <div class="brief"><h3>The Korean School of New Jersey</h3><p class="where">Teaching Assistant, five years</p><p>Korean language, art, and music classes for children from age 3 through 3rd grade. Chosen as one of eight recipients of the KSNJ Student Community Service Scholarship in junior year.</p></div>
+    <div class="brief"><h3>Schoolhouse.world</h3><p class="where">Volunteer SAT Tutor</p><p>Taught SAT Math and Reading and Writing online to 11 learners in two countries; their practice-test scores rose 25 percent on average.</p></div>
+    <div class="brief"><h3>Englewood Health</h3><p class="where">Medical Training Intern, spring 2026</p><p>Wednesday mornings in the operating room observing surgeries across specialties, daily physician-led case lectures, and hands-on clinical training including suturing.</p></div>
+    <div class="brief"><h3>Voices of the Young (VOY)</h3><p class="where">Programs Coordinator, three years</p><p>Schedules, supplies, and volunteer sign-ups for a student group that launched two apps: Mo Soop for peer support and Mo Ri for ADHD study help.</p></div>
+    <div class="brief"><h3>Walk Alongside</h3><p class="where">Test Prep Coordinator</p><p>Help run free SAT prep sessions for students who cannot afford test prep.</p></div>
+    <div class="brief"><h3>Clothing Donations to Help Kids in the World</h3><p class="where">Partnerships Coordinator</p><p>Keep in contact with the nonprofit partners that support clothing donations to pediatric patients.</p></div>
+    <div class="brief"><h3>LiNK North Jersey Rescue Team</h3><p class="where">Student Volunteer, three years</p><p>Awareness events and fundraising for North Korean refugee relief with Liberty in North Korea’s national office.</p></div>
+    <div class="brief"><h3>New Jersey ARCO Youth Orchestra</h3><p class="where">Violist, summers 2025 and 2026</p><p>Ensemble performances for community audiences at nursing homes and a children’s library, including a benefit concert with Compassion International; 52 hours of service each summer.</p></div>
+  </div>
+  <div class="photos"><figure><img src="assets/arco-viola.jpg" alt="Jehee Nam playing viola in the ARCO Youth Orchestra"><figcaption>Viola section, New Jersey ARCO Youth Orchestra.</figcaption></figure><figure><img src="assets/arco-group.jpg" alt="The ARCO Youth Orchestra members with their instruments"><figcaption>The orchestra after a performance.</figcaption></figure></div>
+</section>
+
+<section id="honors">
+  <h2>Honors</h2>
+  <p class="head">In brief</p>
+  <ul class="honors">
+    <li><span class="lvl">National</span>Storytellers of Tomorrow, Ringling College: First Prize, micro-RPG category, 500+ entries, 2025</li>
+    <li><span class="lvl">Regional</span>Scholastic Art and Writing Awards: Silver Key, Critical Essay, 2026</li>
+    <li><span class="lvl">National</span>AP Scholar with Distinction, 2026</li>
+    <li><span class="lvl">National</span>Junior Leadership Award, Gold, National Association for Korean Schools, 2023 to 2026</li>
+    <li><span class="lvl">Regional</span>Newark NJ Regional Brain Bee, 4th place, 2026</li>
+    <li><span class="lvl">Regional</span>Writing Against Hunger Contest, West Side Campaign Against Hunger: Finalist, 2024</li>
+    <li><span class="lvl">Regional</span>Peace Islands Institute 15th Annual Art and Essay Contest: Honorable Mention, 200+ entries, 2025</li>
+    <li><span class="lvl">Community</span>KSNJ Student Community Service Scholarship, 1 of 8 recipients, 2026</li>
+    <li><span class="lvl">Community</span>President’s Volunteer Service Award, Gold, 2023 and 2024; Certificate of Special Congressional Recognition for Community Service, 2025</li>
+  </ul>
+  <div class="cert"><img src="assets/ap-scholar.jpg" alt="AP Scholar with Distinction Award certificate for Jehee Nam"></div>
+</section>
+
+<footer id="contact">
+  <p class="big">Contact</p>
+  <p>Jehee Nam · Tenafly High School, Class of 2027 · <a href="mailto:jeheenam3925@gmail.com">jeheenam3925@gmail.com</a></p>
+</footer>
+
+</main>
+</body>
+</html>
